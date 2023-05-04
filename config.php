@@ -4,7 +4,7 @@
 // Chemin à la racine du projet
 define('ROOT_PATH', dirname(__FILE__));
 
-define('SITE_URL', '/F1');
+define('SITE_URL', '/Formula1');
 
 // Nom du projet
 define('PROJECT_NAME', 'F1 Site');

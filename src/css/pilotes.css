@@ -24,6 +24,9 @@
     margin: auto;
     margin-bottom: 2rem;
   }
+  .team-name-text{
+    font-family: "f1-regular";
+  }
 
   .nationality{
     font-family: 'f1-regular';

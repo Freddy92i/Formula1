@@ -60,6 +60,7 @@ h2{
   text-align: center;
 }
 .button-sel{
+  font-family: "f1-bold";
   width: auto;
   height: 2.5rem;
   border-radius: 2.5rem;

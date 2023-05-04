@@ -1,14 +1,14 @@
 @font-face {
   font-family: "f1-regular";
-  src: url('fonts/formula1-regular.otf');
+  src: url('../../fonts/formula1-regular.otf');
 }
 @font-face {
   font-family: "f1-bold";
-  src: url('fonts/formula1-bold.otf');
+  src: url('../../fonts/formula1-bold.otf');
 }
 @font-face {
   font-family: "f1-wide";
-  src: url('fonts/formula1-wide.otf');
+  src: url('../../fonts/formula1-wide.otf');
 }
 div {
   font-family: "f1-regular";

@@ -61,13 +61,14 @@ h2{
     text-align: center;
 }
 #year-select{
-    width: 8rem;
-    height: 2rem;
-    border-radius: 2.5rem;
-    text-align: center;
-    background: #F2F2F2;
-    display: flex;
-    margin: auto;
+  font-family: "f1-bold";
+  width: 8rem;
+  height: 2rem;
+  border-radius: 2.5rem;
+  text-align: center;
+  background: #F2F2F2;
+  display: flex;
+  margin: auto;
 }
 .text{
     text-align: center;
