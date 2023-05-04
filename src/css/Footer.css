@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "f1-regular";
+    src: url('../../fonts/formula1-regular.otf');
+    }
+    @font-face {
+    font-family: "f1-Bold";
+    src: url('../../fonts/formula1-bold.otf');
+    }
+    @font-face {
+    font-family: "f1-wide";
+    src: url('../../fonts/formula1-wide.otf');
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+    
+    /* Footer */
+    footer {
+        background-color: #e10600;
+        color: #fff;
+        font-family: 'f1-regular';
+        padding: 2rem 0;
+        margin-top: 2rem;
+    }
+    
+    .footer-content {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+    }
+    
+    .footer-section {
+    width: 30%;
+    flex-basis: 45%;
+    margin: 0 2%;
+    }
+    
+    .footer-section h3 {
+    font-family: 'f1-bold';
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    }
+    
+    .footer-section ul {
+    list-style: none;
+    padding: 0;
+    }
+    
+    .footer-section ul li {
+    margin-bottom: 0.5rem;
+    }
+    
+    .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    }
+    
+    .footer-section ul li a:hover {
+    color: black;
+    }
+    
+    .footer-social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    }
+    
+    .footer-social-icons a {
+    display: inline-block;
+    margin-right: 1rem;
+    }
+    
+    .footer-social-icons a:last-child {
+    margin-right: 0;
+    }
+    
+    .footer-social-icons img {
+    width: 30px;
+    height: 30px;
+    }
+    .footer-bottom{
+        margin: auto;
+        text-align: center;
+    }

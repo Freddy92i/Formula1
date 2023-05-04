@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "f1-regular";
+  src: url('../../fonts/formula1-regular.otf');
+}
+@font-face {
+  font-family: "f1-bold";
+  src: url('../../fonts/formula1-bold.otf');
+}
+@font-face {
+  font-family: "f1-wide";
+  src: url('../../fonts/formula1-wide.otf');
+}
+
+body{
+  margin: 0;
+  font-family: 'f1-regular';
+}
+
+.titre-pages{
+  font-family: 'f1-regular';
+  text-align: center;
+}
+.txt{
+  font-family: 'f1-regular';
+  text-align: center;
+  width: 60%;
+  margin: auto;
+}
+.txt-home{
+  font-family: 'f1-regular';
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+nav {
+  background-color: #e10600;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-family: 'f1-regular';
+}
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  font-family: 'f1-regular';
+  font-size: smaller;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #f1f1f1;
+}
+.logo{
+  width: 8rem;
+}

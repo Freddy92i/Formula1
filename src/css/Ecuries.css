@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "f1-regular";
+  src: url('fonts/formula1-regular.otf');
+}
+@font-face {
+  font-family: "f1-bold";
+  src: url('fonts/formula1-bold.otf');
+}
+@font-face {
+  font-family: "f1-wide";
+  src: url('fonts/formula1-wide.otf');
+}
+div {
+  font-family: "f1-regular";
+}
+.titre-pages{
+  text-align: center;
+  font-family: "f1-regular";
+}
+.txt-teams{
+  font-family: 'f1-regular';
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.team-logo {
+  width: 15%;
+  margin-right: 10px;
+  
+}
+.team-card {
+  display: flex;
+  flex-direction: column;
+  width: 22.5rem;
+  height: 19.5rem;
+  margin: 1rem;
+  background-color: #fff;
+  border-right: 3px solid;
+  border-top: 3px solid;
+  border-radius: 10px;
+  overflow: hidden;
+  pointer-events: all;
+  cursor: pointer;
+}
+.team-infos{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.rank{
+  font-family: "f1-Bold";
+}
+
+.team-name {
+  font-family: 'f1-Bold';
+  display: flex;
+  align-items: center;
+  font-size: 37px;
+  font-weight: bold;
+  margin: -25px 10px -35px 10px;
+  justify-content: space-between;
+}
+.team-name-text{
+  margin-right: 1rem;
+    font-family: 'f1-Bold';
+    font-size: 20px;
+}
+
+.team-ranking {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.team-points {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: auto;
+  text-align: right;
+}
+.drivers{
+  display: flex;
+}
+.familyname{
+  margin: 0;
+  font-family: 'f1-bold';
+  font-size: 24px;
+  font-variant-caps: all-petite-caps;
+}
+
+.driver-card {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 3px solid black;
+  flex-direction: column;
+}
+
+.driver-name {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.driver-name span {
+  font-weight: normal;
+}
+
+.driver-photo {
+  width: 80%;
+  height: auto;
+  margin: 5px 0;
+}
