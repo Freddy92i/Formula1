@@ -6,7 +6,7 @@
   let selectedRaceId = null;
   
   // Populate the race select dropdown with available races
-  fetch('http://ergast.com/api/f1/current.json')
+  fetch('https://ergast.com/api/f1/current.json')
     .then(response => response.json())
     .then(data => {
       const raceData = data.MRData.RaceTable.Races;
@@ -34,7 +34,7 @@
         // Fetch qualifying data for the selected race and display it in the table
         function getQualifyingData() {
             qualifBody.innerHTML = '';
-            fetch(`http://ergast.com/api/f1/current/${selectedRaceId}/qualifying.json`)
+            fetch(`https://ergast.com/api/f1/current/${selectedRaceId}/qualifying.json`)
             .then(response => response.json())
             .then(data => {
                 const qualifyingData = data.MRData.RaceTable.Races[0].QualifyingResults;
@@ -60,7 +60,7 @@
          // Fetch race data for the selected race and display it in the table
         function getRaceData() {
             raceBody.innerHTML = '';
-            fetch(`http://ergast.com/api/f1/current/${selectedRaceId}/results.json`)
+            fetch(`https://ergast.com/api/f1/current/${selectedRaceId}/results.json`)
             .then(response => response.json())
             .then(data => {
                 const raceData = data.MRData.RaceTable.Races[0].Results;
