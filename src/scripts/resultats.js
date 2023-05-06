@@ -1,62 +1,80 @@
-const yearSelect = document.querySelector('#year-select');
-const driverTable = document.querySelector('#driver-table');
-const constructorTable = document.querySelector('#constructor-table');
+  // JavaScript to fetch and display qualifying data in the table
+  const raceSelect = document.querySelector('#raceSelect');
+  const qualifBody = document.querySelector('#qualifyingTable tbody');
+  const raceBody = document.querySelector('#raceTable tbody');
 
-function getSeasonResults(selectedYear) {
-  fetchRaceResults(selectedYear);
-  fetchQualifyingResults(selectedYear);
-}
+  let selectedRaceId = null;
+  
+  // Populate the race select dropdown with available races
+  fetch('http://ergast.com/api/f1/current.json')
+    .then(response => response.json())
+    .then(data => {
+      const raceData = data.MRData.RaceTable.Races;
+      raceData.forEach(race => {
+        const option = document.createElement('option');
+        option.value = race.round;
+        option.text = `${race.raceName}`;
+        raceSelect.appendChild(option);
+      });
+      // Set the default selected race to the first race in the list
+      selectedRaceId = raceData[0].round;
+      getQualifyingData();
+      getRaceData()
+    })
+    .catch(error => console.error(error));
+  
+  // Handle changes to the selected race in the dropdown
+  raceSelect.addEventListener('change', () => {
+    selectedRaceId = raceSelect.value;
+    getQualifyingData();
+    getRaceData()
+    
+  });
+  
+        // Fetch qualifying data for the selected race and display it in the table
+        function getQualifyingData() {
+            qualifBody.innerHTML = '';
+            fetch(`http://ergast.com/api/f1/current/${selectedRaceId}/qualifying.json`)
+            .then(response => response.json())
+            .then(data => {
+                const qualifyingData = data.MRData.RaceTable.Races[0].QualifyingResults;
+                qualifyingData.forEach(driver => {
+                const row = qualifBody.insertRow();
+                const driverNameCell = row.insertCell(0);
+                const teamNameCell = row.insertCell(1);
+                const positionCell = row.insertCell(2);
+                const q1TimeCell = row.insertCell(3);
+                const q2TimeCell = row.insertCell(4);
+                const q3TimeCell = row.insertCell(5);
+                driverNameCell.textContent = `${driver.Driver.givenName} ${driver.Driver.familyName}`;
+                teamNameCell.textContent = driver.Constructor.name;
+                positionCell.textContent = driver.position;
+                q1TimeCell.textContent = driver.Q1 ? driver.Q1 : '--:--.---';
+                q2TimeCell.textContent = driver.Q2 ? driver.Q2 : '--:--.---';
+                q3TimeCell.textContent = driver.Q3 ? driver.Q3 : '--:--.---';
+                });
+            })
+            .catch(error => console.error(error));
+        }
 
-function fetchRaceResults(selectedYear) {
-fetch('https://ergast.com/api/f1/${selectedYear}/results.json')
-.then(response => response.json())
-.then(data => {
-const raceResults = data.MRData.RaceTable.Races;
-let tableHTML = '<tr><th>Position</th><th>Pilote</th><th>Nationalité</th><th>Constructeur</th><th>Temps de course</th><th>Points</th></tr>';
-raceResults.forEach(race => {
-const results = race.Results;
-results.forEach(result => {
-const position = result.position;
-const name = '${result.Driver.givenName} ${result.Driver.familyName}';
-const nationality = result.Driver.nationality;
-const constructor = result.Constructor.name;
-const time = result.Time ? result.Time.time : 'N/A';
-const points = result.points;
-tableHTML += <tr><td>${position}</td><td>${name}</td><td>${nationality}</td><td>${constructor}</td><td>${time}</td><td>${points}</td></tr>;
-});
-});
-driverTable.innerHTML = tableHTML;
-})
-.catch(error => console.error(error));
-}
-
-function fetchQualifyingResults(selectedYear) {
-fetch('https://ergast.com/api/f1/${selectedYear}/qualifying.json')
-.then(response => response.json())
-.then(data => {
-const qualifyingResults = data.MRData.RaceTable.Races[0].QualifyingResults;
-let tableHTML = '<tr><th>Position</th><th>Pilote</th><th>Nationalité</th><th>Constructeur</th><th>Temps de qualification</th></tr>';
-qualifyingResults.forEach(result => {
-const position = result.position;
-const name = '${result.Driver.givenName} ${result.Driver.familyName}';
-const nationality = result.Driver.nationality;
-const constructor = result.Constructor.name;
-const time = result.Q3 ? result.Q3 : (result.Q2 ? result.Q2 : result.Q1);
-tableHTML += <tr><td>${position}</td><td>${name}</td><td>${nationality}</td><td>${constructor}</td><td>${time}</td></tr>;
-});
-constructorTable.innerHTML = tableHTML;
-})
-.catch(error => console.error(error));
-}
-
-yearSelect.addEventListener('change', function() {
-const selectedYear = this.value;
-getSeasonResults(selectedYear);
-});
-
-updateTables();
-
-function updateTables() {
-const selectedYear = yearSelect.value;
-getSeasonResults(selectedYear);
-}
+         // Fetch race data for the selected race and display it in the table
+        function getRaceData() {
+            raceBody.innerHTML = '';
+            fetch(`http://ergast.com/api/f1/current/${selectedRaceId}/results.json`)
+            .then(response => response.json())
+            .then(data => {
+                const raceData = data.MRData.RaceTable.Races[0].Results;
+                raceData.forEach(driver => {
+                const row = raceBody.insertRow();
+                const driverNameCell = row.insertCell(0);
+                const teamNameCell = row.insertCell(1);
+                const positionCell = row.insertCell(2);
+                const pointsCell = row.insertCell(3);
+                driverNameCell.textContent = `${driver.Driver.givenName} ${driver.Driver.familyName}`;
+                teamNameCell.textContent = driver.Constructor.name;
+                positionCell.textContent = driver.position;
+                pointsCell.textContent = driver.points;
+                });
+            })
+            .catch(error => console.error(error));
+        }
