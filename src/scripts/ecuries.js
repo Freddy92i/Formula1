@@ -26,11 +26,11 @@ fetch(url)
       teamDiv.classList.add('team-card');
 
         // Ajout d'un event listener sur le clic de la carte d'équipe
-        teamDiv.addEventListener('click', () => {
-          const teamId = team.Constructor.constructorId;
-          window.location.href = `#`;
+        // teamDiv.addEventListener('click', () => {
+          // const teamId = team.Constructor.constructorId;
+          // window.location.href = `#`;
           // window.location.href = `../pages/team.php?${teamId}`;
-        });
+        // });
       
         const teamRank = team.position;
         const name = team.Constructor.name;

@@ -26,10 +26,10 @@ fetch(url)
     drivers.forEach(driver => {
       const driverDiv = document.createElement('div');
       driverDiv.classList.add('driver-card');
-        driverDiv.addEventListener('click', () => {
-          const driverName = driver.Driver.familyName.toLowerCase();
-          window.location.href = `../pages/informations.php?${driverName}`;
-        });
+        // driverDiv.addEventListener('click', () => {
+          // const driverName = driver.Driver.familyName.toLowerCase();
+          // window.location.href = `../pages/informations.php?${driverName}`;
+        // });
       
       const driverRank = driver.position;
       const { familyName } = driver.Driver

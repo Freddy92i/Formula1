@@ -14,8 +14,8 @@ include '../../navbar.php';
   <body>
   <body>
     <div class="text-haut">
-      <h2 class="results-text">Résultats de toutes les résultats de Formule 1</h2>
-      <p class="text">Découvrez les résultats en course et qualifications de cette saison de Formule 1.</p>
+      <h2 class="results-text">Résultats des qualifications et courses de Formule 1</h2>
+      <p class="text">Découvrez les résultatsdes qualifications et course de cette saison de Formule 1.</p>
     </div>
     <div class="selection">
         <label for="raceSelect">Selectionnez une course :</label>
@@ -46,7 +46,7 @@ include '../../navbar.php';
         </table>
         </div>
         <!--
-        
+        afficher " resultats a venir" si pas de résultats de l'api
         -->
         <div class="qualifdiv">
             <h1>Résultats de course </h1>

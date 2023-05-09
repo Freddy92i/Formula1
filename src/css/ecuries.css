@@ -47,7 +47,6 @@ div {
   border-radius: 10px;
   overflow: hidden;
   pointer-events: all;
-  cursor: pointer;
 }
 .team-infos{
   display: flex;

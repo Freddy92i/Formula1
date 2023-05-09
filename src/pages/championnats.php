@@ -14,7 +14,8 @@ include '../../navbar.php';
   <body>
           <div class="text-haut">
       <h2 class="results-text">Résultats de la saison</h2>
-      <p class="text">Découvrez les résultats de la saisons de Formule 1 .</p>
+      <p class="text">Découvrez les classements des championnats pilote
+         et constructeur de la saison actuelle de Formule 1.</p>
     </div>
 <div class="standings">
     <div class="driver-table-standings">
