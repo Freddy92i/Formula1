@@ -3,7 +3,7 @@
   
   $xml = simplexml_load_file($rss_feed);
   $articles = $xml->channel->item;
-  $max_articles = 9; // Nombre maximum d'articles à afficher par défaut
+  $max_articles = 18; // Nombre maximum d'articles à afficher par défaut
   $image_quality = 10; // Qualité de l'image (1-100), 10 étant une qualité très basse
 
   function get_article_image($article) {
@@ -59,27 +59,6 @@
       <?php $count++; ?>
     <?php endif; ?>
   <?php endforeach; ?>
-  <?php if($count >= $max_articles): ?>
-    <div class="show-more">
-      <p class="txt-home">
-        Vous en voulez encore plus ? Alors ne manquez pas nos autres articles !
-        Obtenez encore plus d'informations passionnantes sur les courses, les écuries,
-        les pilotes et les événements de la saison de Formule 1.
-      </p>
-      <button id="show-more-button" class="button-afficherplus">Afficher plus d'articles</button>
-    </div>
-  <?php endif; ?>
 </div>
 
-<script>
-  var showMoreButton = document.getElementById("show-more-button");
-  if(showMoreButton) {
-    showMoreButton.addEventListener('click', function() {
-      var articles = document.getElementsByClassName('article');
-      for(var i = <?php echo $max_articles; ?>; i < articles.length; i++) {
-        articles[i].style.display = "block";
-      }
-      showMoreButton.style.display = "none";
-    });
-  }
 </script>

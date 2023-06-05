@@ -69,19 +69,6 @@
   margin-bottom: 2rem;
   font-size: inherit;
 }
-.button-afficherplus{
-  cursor: pointer;
-  padding: 0.5%;
-  border: 1px solid red;
-  border-radius: 2rem;
-  background: red;
-  width: 17%;
-  margin: auto;
-  color: #fff;
-  font-family: 'f1-regular';
-  margin-bottom: 2rem;
-  font-size: inherit;
-}
 
 .show-more{
   width: 100%;
