@@ -66,7 +66,7 @@
         Obtenez encore plus d'informations passionnantes sur les courses, les écuries,
         les pilotes et les événements de la saison de Formule 1.
       </p>
-      <button id="show-more-button" class="button-lireplus">Afficher plus d'articles</button>
+      <button id="show-more-button" class="button-afficherplus">Afficher plus d'articles</button>
     </div>
   <?php endif; ?>
 </div>
